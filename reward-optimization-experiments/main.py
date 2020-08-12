@@ -4,7 +4,7 @@ import gym
 import gym_fsw
 import matplotlib.pyplot as plt
 import pandas as pd
-from fsw_utils import Adapter, fsw_metrics
+from utils import FSWAdapter, metrics
 from lcs.agents.aacs2 import Configuration, AACS2
 from lcs.agents.acs2ar import Configuration, ACS2AR
 
