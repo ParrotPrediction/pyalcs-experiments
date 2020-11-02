@@ -1,18 +1,44 @@
 import logging
+import os.path
 
+import dill
 import lcs.agents.aacs2 as aacs2
 import lcs.agents.acs2 as acs2
 import pandas as pd
 from metrics import parse_metrics
 
 
-def avg_experiments(n, trials, env, params):
+def get_from_cache_or_run(cache_path, fun):
+    os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+
+    if os.path.exists(cache_path):
+        with open(cache_path, 'rb') as f:
+            return dill.load(f)
+    else:
+        res = fun()
+
+        # save the results to file
+        with open(cache_path, 'wb') as f:
+            dill.dump(res, f)
+
+        return res
+
+
+def avg_experiments(n, fun):
+    pops_acs2 = []
+    pops_aacs2v1 = []
+    pops_aacs2v2 = []
+
     dfs = []
-    logging.debug(f"{params}\n")
 
     for i in range(n):
         print(f"Executing experiment {i}")
-        _, _, _, m = run_experiments(env, trials, params)
+        p_acs2, p_aacs2v1, p_aacs2v2, m = fun()
+
+        pops_acs2.append(p_acs2)
+        pops_aacs2v1.append(p_aacs2v1)
+        pops_aacs2v2.append(p_aacs2v2)
+
         df = parse_metrics(m)
         dfs.append(df)
 
@@ -20,10 +46,9 @@ def avg_experiments(n, trials, env, params):
     agg_df = all_dfs.groupby(['agent', 'trial', 'phase']).mean().reset_index(
         level='phase')
 
-    return agg_df
+    return pops_acs2, pops_aacs2v1, pops_aacs2v2, agg_df
 
-
-def run_experiments(env, trials, params):
+def run_experiments_alternating(env, trials, params):
     """
     Function running experiments in explore-exploit fashion using
     3 algorithms - ACS2, AACS2-v1, AACS2-v2

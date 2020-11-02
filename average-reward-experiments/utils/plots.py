@@ -31,3 +31,9 @@ def plot_exploit_results(df):
         # Rho
         axs[2, algno].set_title(f'Rho ({alg})')
         alg_df['rho'].plot(ax=axs[2, algno])
+
+    plt.tight_layout(h_pad=3.0)
+
+
+
+

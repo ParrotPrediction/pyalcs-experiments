@@ -134,3 +134,4 @@ mlruns
 out
 src
 .DS_Store
+**/*/.ipynb_checkpoints/

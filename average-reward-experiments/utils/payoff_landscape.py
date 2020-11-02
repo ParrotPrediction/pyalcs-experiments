@@ -2,6 +2,7 @@ from collections import namedtuple
 
 StateAction = namedtuple('StateAction', 'id state action')
 
+
 def get_all_state_action(state_to_actions):
     state_action = []
 
@@ -13,4 +14,3 @@ def get_all_state_action(state_to_actions):
                 idx += 1
 
     return state_action
-

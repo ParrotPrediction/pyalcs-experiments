@@ -39,6 +39,7 @@ def parse_metrics(metrics):
         # index=idx
     )
 
+    # It is used in alternating explore-exploit mode
     df['phase'] = df.trial.map(
         lambda t: "explore" if t % 2 == 0 else "exploit")
 
