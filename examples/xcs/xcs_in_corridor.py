@@ -32,7 +32,6 @@ if __name__ == '__main__':
 
     maze = gym.make('corridor-20-v0')
 
-
     cfg = Configuration(theta_mna=2,
                         user_metrics_collector_fcn=xcs_corridor_metrics)
 
