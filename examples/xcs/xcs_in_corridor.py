@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     maze = gym.make('corridor-20-v0')
 
-    cfg = Configuration(theta_mna=2,
+    cfg = Configuration(number_of_actions=2,
                         user_metrics_collector_fcn=xcs_corridor_metrics)
 
     agent = XCS(cfg)
