@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     maze = gym.make('Maze4-v0')
 
-    cfg = Configuration(number_of_actions=2,
+    cfg = Configuration(number_of_actions=8,
                         user_metrics_collector_fcn=xcs_maze_metrics)
 
     logging.info("Exploring maze")
