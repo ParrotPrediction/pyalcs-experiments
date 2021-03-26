@@ -35,7 +35,6 @@ def maze_knowledge(population, environment) -> float:
 
     return nr_correct / len(transitions) * 100.0
 
-
 def detailed_knowledge(maze, population):
     """
     Analyze the population of classifiers to determine what classifiers cover
