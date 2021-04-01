@@ -1,4 +1,6 @@
 import logging
+from itertools import groupby
+from operator import attrgetter
 
 import gym
 # noinspection PyUnresolvedReferences
@@ -24,7 +26,8 @@ def _calculate_knowledge(agent: MACS, env):
         anticipations = list(agent.get_anticipations(p0p, a))
 
         # accurate classifiers
-        if len(anticipations) == 1 and anticipations[0] == p1p:
+        if all(pa == p1p for pa in anticipations):
+        # if len(anticipations) == 1 and anticipations[0] == p1p:
             debug[a].add(p0p)
             covered_transitions += 1
 
@@ -53,16 +56,18 @@ if __name__ == '__main__':
 
     state_values = {'0', '1', '9'}
 
-    cfg = Configuration(classifier_length=8,
+    cfg = Configuration(classifier_length=9,
                         number_of_possible_actions=3,
-                        feature_possible_values=[state_values] * 8,
+                        feature_possible_values=[state_values] * 8 + [{'0', '9'}],
+                        estimate_expected_improvements=True,
                         metrics_trial_frequency=10,
                         user_metrics_collector_fcn=_metrics)
 
     agent = MACS(cfg)
 
     print("\n*** EXPLORE ***")
-    pop, metrics = agent.explore(env, 1000)
+    pop, metrics = agent.explore(env, 100)
 
-    for cl in pop:
-        print(cl)
+    for action, gcl in groupby(sorted(pop, key=lambda c: (c.action, c.condition))):
+        for cl in gcl:
+            print(cl)

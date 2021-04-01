@@ -7,7 +7,7 @@ import gym_corridor
 from lcs.agents import EnvironmentAdapter
 from lcs.agents.acs2 import ACS2, Configuration
 
-from lcs.strategies.action_selection2 import EpsilonGreedy
+from lcs.strategies.action_selection import EpsilonGreedy
 
 # Configure logger
 logging.basicConfig(level=logging.INFO)
