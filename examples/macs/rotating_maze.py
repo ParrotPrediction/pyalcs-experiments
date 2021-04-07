@@ -1,6 +1,5 @@
 import logging
 from itertools import groupby
-from operator import attrgetter
 
 import gym
 # noinspection PyUnresolvedReferences
@@ -26,16 +25,15 @@ def _calculate_knowledge(agent: MACS, env):
         anticipations = list(agent.get_anticipations(p0p, a))
 
         # accurate classifiers
-        if all(pa == p1p for pa in anticipations):
-        # if len(anticipations) == 1 and anticipations[0] == p1p:
+        if len(anticipations) == 1 and anticipations[0] == p1p:
             debug[a].add(p0p)
             covered_transitions += 1
 
     return {
         'score': covered_transitions / len(transitions),
-        'good_0_actions': len(debug[0]),
-        'good_1_actions': len(debug[1]),
-        'good_2_actions': len(debug[2]),
+        'good_0_trans': len(debug[0]),
+        'good_1_trans': len(debug[1]),
+        'good_2_trans': len(debug[2]),
     }
 
 
