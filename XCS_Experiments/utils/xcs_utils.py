@@ -33,7 +33,7 @@ def avg_experiment(maze, cfg, number_of_tests=1, explore_trials=4000, exploit_me
 
 def start_single_experiment(maze, cfg, explore_trials=4000, exploit_metrics=1000):
     agent = XCS(cfg)
-    explore_population, explore_metrics = agent.explore(maze, explore_trials, True)
+    explore_population, explore_metrics = agent.explore(maze, explore_trials, False)
     agent = XCS(cfg=cfg, population=explore_population)
     exploit_population, exploit_metrics = agent.exploit(maze, exploit_metrics)
 
