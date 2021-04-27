@@ -2,7 +2,7 @@ from lcs.agents.xcs import XCS, Configuration
 import pandas as pd
 from xcs.scenarios import Scenario
 from xcs.bitstrings import BitString
-
+import numpy as np
 # environment setup
 import gym
 # noinspection PyUnresolvedReferences
@@ -95,6 +95,7 @@ def other_start_single_test_explore(maze, algorithm, explore_trials, exploit_tri
 class MazeScenario(Scenario):
 
     def __init__(self, input_size=8):
+        np.random.seed(1)
         self.input_size = input_size
         self.maze = gym.make('Maze4-v0')
         self.possible_actions = (0, 1, 2, 3, 4, 5, 6, 7)
