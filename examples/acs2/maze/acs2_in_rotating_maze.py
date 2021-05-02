@@ -28,18 +28,17 @@ def _metrics(agent: ACS2, env):
     return {
         'pop': len(population),
         'rel': len(reliable),
-        'knowledge': _calculate_knowledge(reliable, env)
+        # 'knowledge': _calculate_knowledge(reliable, env)
     }
 
 
 if __name__ == '__main__':
     env = gym.make('Maze228-v0')
 
-    cfg = Configuration(classifier_length=8,
+    cfg = Configuration(classifier_length=9,
                         number_of_possible_actions=3,
                         metrics_trial_frequency=1,
-                        do_ga=False,
-                        user_metrics_collector_fcn=_metrics)
+                        do_ga=False)
 
     agent = ACS2(cfg)
 
