@@ -7,6 +7,7 @@ import lcs.agents.acs2 as acs2
 import lcs.agents.yacs as yacs
 import numpy as np
 import pandas as pd
+import bitstring
 
 
 # convert collected metrics into pandas dataframe
@@ -173,12 +174,14 @@ def run_yacs(return_data,
              metrics_fcn,
              explore_trials,
              trace_length,
+             estimate_expected_improvements,
              feature_possible_values):
     
     cfg = yacs.Configuration(classifier_length, possible_actions,
                              learning_rate=learning_rate,
                              environment_adapter=environment_adapter,
                              trace_length=trace_length,
+                             estimate_expected_improvements=estimate_expected_improvements,
                              feature_possible_values=feature_possible_values,
                              metrics_trial_frequency=metrics_trial_freq,
                              user_metrics_collector_fcn=metrics_fcn)
