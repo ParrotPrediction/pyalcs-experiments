@@ -7,6 +7,6 @@ entry_points:
       trials: { type: int }
       bins: { type: int }
     command: "python code/train.py
-                        --rmpx-size {size}
+                        --rmpx-size {rmpx-size}
                         --trials {trials}
                         --bins {bins}"
