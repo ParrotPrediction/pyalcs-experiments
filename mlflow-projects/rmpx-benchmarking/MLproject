@@ -1,0 +1,12 @@
+name: RMPX Benchmarking
+
+entry_points:
+  main:
+    parameters:
+      rmpx-size: { type: int }
+      trials: { type: int }
+      bins: { type: int }
+    command: "python code/train.py
+                        --rmpx-size {size}
+                        --trials {trials}
+                        --bins {bins}"
