@@ -16,17 +16,12 @@ def fraction_accuracy(xncs: XNCS):
     accuracies = []
     for action in range(xncs.cfg.number_of_actions):
         action_set = xncs.population.generate_action_set(action)
-        most_numerous = action_set[0]
-        for cl in action_set:
-            if cl.numerosity > most_numerous.numerosity:
-                most_numerous = cl
-        if most_numerous.queses > 0:
-            accuracies.append(
-                (most_numerous.queses - most_numerous.mistakes) / most_numerous.queses
-            )
+        accuracy = sorted(action_set, key=lambda cl: -1 * cl.numerosity)[1].accuracy
+        if accuracy is not None:
+            accuracies.append(accuracy)
         else:
             accuracies.append(0)
-    return sum(accuracies) / xncs.cfg.number_of_actions
+    return sum(accuracies) / len(accuracies)
 
 
 def specificity(xncs, population):
