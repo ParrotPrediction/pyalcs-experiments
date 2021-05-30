@@ -7,14 +7,53 @@ import numpy as np
 import gym
 # noinspection PyUnresolvedReferences
 import gym_maze
+import random
+import numpy as np
+from lcs.agents.xcs import ClassifiersList
+from lcs.agents.xcs import Classifier
+from lcs.agents.xcs import Condition
+
+
+def cl_accuracy(cl, cfg):
+    if cl.error < cfg.epsilon_0:
+        return 1
+    else:
+        return cfg.alpha * pow(1 / (cl.error * cfg.epsilon_0), cfg.v)
+
+
+def specificity(xncs, population):
+    total_specificity = 0
+    for cl in population:
+        total_specificity += pow(2, cl.wildcard_number) * cl.numerosity
+    return total_specificity / xncs.population.numerosity
 
 
 def xcs_metrics(xcs: XCS, environment):
     return {
         'population': len(xcs.population),
-        'numerosity': sum(cl.numerosity for cl in xcs.population)
+        'numerosity': sum(cl.numerosity for cl in xcs.population),
+        'average_specificity': specificity(xcs, xcs.population),
     }
 
+def XCS_classifier(situation, cfg):
+    generalized = []
+    for i in range(len(situation)):
+        if np.random.rand() > cfg.covering_wildcard_chance:
+            generalized.append(cfg.classifier_wildcard)
+        else:
+            generalized.append(situation[i])
+
+    return Classifier(condition=Condition(generalized),
+                      action=random.randrange(0, cfg.number_of_actions),
+                      time_stamp=0,
+                      cfg=cfg)
+
+def XCS_population(maze, cfg):
+    classifiers_list = ClassifiersList(cfg)
+    while classifiers_list.numerosity < cfg.max_population:
+        situation = maze.reset()
+        classifiers_list.insert_in_population(XCS_classifier(situation, cfg))
+    return classifiers_list
 
 def parse_results(metrics, cfg):
     df = pd.DataFrame(metrics)
@@ -30,18 +69,21 @@ def parse_results_exploit(metrics, cfg, explore_trials):
     return df
 
 
-def avg_experiment(maze, cfg, number_of_tests=1, explore_trials=4000, exploit_metrics=1000):
+def avg_experiment(maze, cfg, number_of_tests=1, explore_trials=4000, exploit_trials=1000, pre_generate=False):
     test_metrics = []
     for i in range(number_of_tests):
         print(f'Executing {i} experiment')
-        test_metrics.append(start_single_experiment(maze, cfg, explore_trials, exploit_metrics))
+        if pre_generate:
+            population = XCS_population(maze, cfg)
+        else:
+            population = None
+        test_metrics.append(start_single_experiment(maze, cfg, explore_trials, exploit_trials, population))
     return pd.concat(test_metrics).groupby(['trial']).mean()
 
 
-def start_single_experiment(maze, cfg, explore_trials=4000, exploit_metrics=1000):
-    agent = XCS(cfg)
+def start_single_experiment(maze, cfg, explore_trials=4000, exploit_metrics=1000, population=None):
+    agent = XCS(cfg, population)
     explore_population, explore_metrics = agent.explore(maze, explore_trials, False)
-    agent = XCS(cfg=cfg, population=explore_population)
     exploit_population, exploit_metrics = agent.exploit(maze, exploit_metrics)
 
     df = parse_results(explore_metrics, cfg)

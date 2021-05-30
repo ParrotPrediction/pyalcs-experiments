@@ -11,6 +11,7 @@ cfg = Configuration(number_of_actions=8,
                     metrics_trial_frequency=100,
                     covering_wildcard_chance=0.9,
                     mutation_chance=1,
+                    lmc=10,
                     delta=0.1,
                     user_metrics_collector_fcn=xcs_metrics)
 
