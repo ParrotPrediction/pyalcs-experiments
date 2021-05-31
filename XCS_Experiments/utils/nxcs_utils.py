@@ -13,15 +13,7 @@ def cl_accuracy(cl, cfg):
 
 
 def fraction_accuracy(xncs: XNCS):
-    accuracies = []
-    for action in range(xncs.cfg.number_of_actions):
-        action_set = xncs.population.generate_action_set(action)
-        accuracy = sorted(action_set, key=lambda cl: -1 * cl.numerosity)[1].accuracy
-        if accuracy is not None:
-            accuracies.append(accuracy)
-        else:
-            accuracies.append(0)
-    return sum(accuracies) / len(accuracies)
+    return xncs.fraction_accuracy
 
 
 def specificity(xncs, population):
