@@ -5,6 +5,29 @@ from lcs.agents.xncs import XNCS, Configuration, Classifier, ClassifiersList, Ef
 from lcs.agents.xcs import Condition
 
 
+def maze_knowledge(population, environment):
+    transitions = environment.env.get_all_possible_transitions()
+
+    # Count how many transitions are anticipated correctly
+    nr_correct = 0
+
+    # For all possible destinations from each path cell
+    for start, action, end in transitions:
+        p0 = environment.env.maze.perception(*start)
+        p1 = environment.env.maze.perception(*end)
+        if any([True for cl in population
+                if predicts_successfully(cl, p0, action, p1)]):
+            nr_correct += 1
+    return nr_correct / len(transitions) * 100.0
+
+
+def predicts_successfully(cl: Classifier, p0, action, p1):
+    if cl.does_match(p0):
+        if cl.action == action:
+            if cl.effect == Effect(p1):
+                return True
+    return False
+
 def cl_accuracy(cl, cfg):
     if cl.error < cfg.epsilon_0:
         return 1
@@ -21,6 +44,16 @@ def specificity(xncs, population):
     for cl in population:
         total_specificity += pow(2, cl.wildcard_number) * cl.numerosity
     return total_specificity / xncs.population.numerosity
+
+
+def xncs_maze_metrics(xncs: XNCS, environment):
+    return {
+        'numerosity': xncs.population.numerosity,
+        'population': len(xncs.population),
+        'average_specificity': specificity(xncs, xncs.population),
+        'fraction_accuracy': fraction_accuracy(xncs),
+        'knowledge': maze_knowledge(xncs.population, environment),
+    }
 
 
 def xncs_metrics(xncs: XNCS, environment):

@@ -14,6 +14,28 @@ from lcs.agents.xcs import Classifier
 from lcs.agents.xcs import Condition
 
 
+def maze_knowledge(population, environment):
+    transitions = environment.env.get_all_possible_transitions()
+
+    # Count how many transitions are anticipated correctly
+    nr_correct = 0
+
+    # For all possible destinations from each path cell
+    for start, action, end in transitions:
+        p0 = environment.env.maze.perception(*start)
+        if any([True for cl in population
+                if predicts_successfully(cl, p0, action)]):
+            nr_correct += 1
+    return nr_correct / len(transitions) * 100.0
+
+
+def predicts_successfully(cl: Classifier, p0, action):
+    if cl.does_match(p0):
+        if cl.action == action:
+            return True
+    return False
+
+
 def cl_accuracy(cl, cfg):
     if cl.error < cfg.epsilon_0:
         return 1
@@ -34,6 +56,16 @@ def xcs_metrics(xcs: XCS, environment):
         'numerosity': sum(cl.numerosity for cl in xcs.population),
         'average_specificity': specificity(xcs, xcs.population),
     }
+
+
+def xcs_maze_metrics(xcs: XCS, environment):
+    return {
+        'population': len(xcs.population),
+        'numerosity': sum(cl.numerosity for cl in xcs.population),
+        'average_specificity': specificity(xcs, xcs.population),
+        'knowledge': maze_knowledge(xcs.population, environment),
+    }
+
 
 def XCS_classifier(situation, cfg):
     generalized = []
