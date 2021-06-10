@@ -1,7 +1,9 @@
 from lcs import Perception
 from lcs.agents import EnvironmentAdapter
 
-rmpx_utils = None
+from .rmpx_utils import RealMultiplexerUtils
+
+rmpx_utils: RealMultiplexerUtils
 
 
 class RealMultiplexerAdapter(EnvironmentAdapter):
@@ -41,12 +43,14 @@ def rmpx_metrics_collector(agent, env):
         'generalization': generalization_score(population)
     }
 
+
 # DynaQ helpers
 def rmpx_perception_to_int(p0, discretize=True):
     if discretize:
         p0 = rmpx_utils.discretize(p0)
 
     return rmpx_utils.state_mapping_inv[tuple(p0)]
+
 
 def dynaq_rmpx_knowledge_calculator(model, env):
     all_transitions = 0
