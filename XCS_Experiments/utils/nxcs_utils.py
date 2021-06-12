@@ -24,6 +24,8 @@ def maze_knowledge(population, environment):
 def predicts_successfully(cl: Classifier, p0, action, p1):
     if cl.does_match(p0):
         if cl.action == action:
+            if cl.effect is None:
+                return False
             if cl.effect == Effect(p1):
                 return True
     return False
@@ -53,6 +55,14 @@ def xncs_maze_metrics(xncs: XNCS, environment):
         'average_specificity': specificity(xncs, xncs.population),
         'fraction_accuracy': fraction_accuracy(xncs),
         'knowledge': maze_knowledge(xncs.population, environment),
+    }
+
+def xncs_woods_metrics(xncs: XNCS, environment):
+    return {
+        'numerosity': xncs.population.numerosity,
+        'population': len(xncs.population),
+        'average_specificity': specificity(xncs, xncs.population),
+        'fraction_accuracy': fraction_accuracy(xncs),
     }
 
 
