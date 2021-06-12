@@ -8,18 +8,21 @@ The following experiment is designed to measure the performance of ALCS algorith
 
 Pseudo-code below:
 ```python
-import numpy as np
-from hashlib import sha256
+import hashlib
 
-HASH_FUNC = sha256
+import numpy as np
+
+HASH_FUNC = 'sha256'
 MODULO = 64
 
 if __name__ == '__main__':
     for i in np.arange(0, 1, .1):
-        i = str(i).encode('utf-8')
-        hash = int(HASH_FUNC(i).hexdigest(), 16)
+        h = hashlib.new(HASH_FUNC)
+        h.update(str(i).encode('utf-8'))
+        hash = int(h.hexdigest(), 16)
         output = hash % MODULO
         print(f"{i}:\t{output}")
+
 ```
 
 ## Verification
