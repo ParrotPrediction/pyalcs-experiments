@@ -51,8 +51,8 @@ Useful Docker commands for working with the container image with experiments:
 
     docker run \
          --rm \
-        -e AWS_ACCESS_KEY_ID=AKIA6FBBCFABERA7IXON \
-        -e AWS_SECRET_ACCESS_KEY=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 \
+        -e AWS_ACCESS_KEY_ID= \
+        -e AWS_SECRET_ACCESS_KEY= \
         --network host \
         rmpx-benchmark:4 \
         --no-conda -P trials=1000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2
