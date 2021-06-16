@@ -41,3 +41,18 @@ The experiment collect the following performance metrics:
 **H3**: The selection of hashing function `HASH_FUNC` has no significant impact on population size, performance or execution time.
 
 **H4**: There is a negative correlation between metrics and the `MODULO` parameter when increasing problem size. (_Increasing problem space results negatively in all metrics_)
+
+## MLflow
+
+Useful Docker commands for working with the container image with experiments:
+
+    docker build -t rmpx-benchmark:3 .
+    docker run --entrypoint bash -ti rmpx-benchmark:3
+
+    docker run \
+         --rm \
+        -e AWS_ACCESS_KEY_ID=AKIA6FBBCFABERA7IXON \
+        -e AWS_SECRET_ACCESS_KEY=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 \
+        --network host \
+        rmpx-benchmark:4 \
+        --no-conda -P trials=1000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2

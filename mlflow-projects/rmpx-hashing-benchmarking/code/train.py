@@ -3,12 +3,10 @@ import hashlib
 import gym
 # noinspection PyUnresolvedReferences
 import gym_multiplexer
-import mlflow
+
 from lcs.agents import EnvironmentAdapter
 
 from agents import run_acs, run_acs2, run_yacs
-
-mlflow.set_tracking_uri("http://localhost/mlflow")
 
 
 class HashingRmpxAdapter(EnvironmentAdapter):
@@ -45,7 +43,6 @@ def run(rmpx_size, trials, agent, hash_name, modulo):
     env = gym.make(f'real-multiplexer-{rmpx_size}bit-v0')
     env_adapter = HashingRmpxAdapter(hash_name=hash_name, modulo=modulo)
 
-    model_checkpoint_freq = trials / 25
     common_cfg = {
         "classifier_length": rmpx_size + 1,
         "number_of_possible_actions": 2,
@@ -53,20 +50,21 @@ def run(rmpx_size, trials, agent, hash_name, modulo):
         "environment_adapter": env_adapter,
         "user_metrics_collector_fcn": metrics_collector,
         "metrics_trial_frequency": 25,
-        "use_mlflow": False
+        'model_checkpoint_frequency': trials / 25,
+        "use_mlflow": True
     }
 
-    if agent == 'acs':
+    if agent == 'ACS':
         return run_acs(env, trials, {**common_cfg, **{}})
-    elif agent == 'acs2':
+    elif agent == 'ACS2':
         return run_acs2(env, trials, {**common_cfg, **{
             'do_ga': False
         }})
-    elif agent == 'acs2_ga':
+    elif agent == 'ACS2GA':
         return run_acs2(env, trials, {**common_cfg, **{
             'do_ga': True
         }})
-    elif agent == 'yacs':
+    elif agent == 'YACS':
         return run_yacs(env, trials, {**common_cfg, **{
             'trace_length': 3,
             'estimate_expected_improvements': False,
@@ -81,9 +79,9 @@ def run(rmpx_size, trials, agent, hash_name, modulo):
 
 if __name__ == '__main__':
     pop, metrics = run(
-        rmpx_size=3,
+        rmpx_size=6,
         trials=100,
-        agent='acs2',
+        agent='ACS2',
         hash_name='sha256',
         modulo=16)
 

@@ -1,0 +1,14 @@
+name: RMPX Hash Benchmarking
+
+entry_points:
+  main:
+    parameters:
+      rmpx-size: { type: int }
+      trials: { type: int }
+      hash: { type: string }
+      agent: { type: string }
+    command: "python code/mlflow_runner.py
+                        --rmpx-size {rmpx-size}
+                        --trials {trials}
+                        --hash {hash}
+                        --agent {agent}"

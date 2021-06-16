@@ -1,0 +1,2 @@
+-e git+https://github.com/ParrotPrediction/pyalcs.git@9a40a62ac3f42ef60009c23f1b4e267bdf0a7c14#egg=pyalcs[mlflow]
+-e git+https://github.com/ParrotPrediction/openai-envs.git@1f9d0f6249a9ccddc3299309d72687fbcbb53fc6#egg=parrotprediction-openai-envs
