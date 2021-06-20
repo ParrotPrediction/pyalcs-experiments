@@ -30,6 +30,7 @@ def predicts_successfully(cl: Classifier, p0, action, p1):
                 return True
     return False
 
+
 def cl_accuracy(cl, cfg):
     if cl.error < cfg.epsilon_0:
         return 1
@@ -73,6 +74,7 @@ def xncs_metrics(xncs: XNCS, environment):
         'average_specificity': specificity(xncs, xncs.population),
         'fraction_accuracy': fraction_accuracy(xncs)
     }
+
 
 def avg_experiment(maze, cfg, number_of_tests=1, explore_trials=3000, exploit_trials=1000, pre_generate=False):
     test_metrics =[]
