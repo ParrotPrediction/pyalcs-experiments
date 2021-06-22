@@ -46,13 +46,11 @@ The experiment collect the following performance metrics:
 
 Useful Docker commands for working with the container image with experiments:
 
-    docker build -t rmpx-benchmark:3 .
-    docker run --entrypoint bash -ti rmpx-benchmark:3
+```shell
+make docker_build_image
+```
+    
 
-    docker run \
-         --rm \
-        -e AWS_ACCESS_KEY_ID= \
-        -e AWS_SECRET_ACCESS_KEY= \
-        --network host \
-        rmpx-benchmark:4 \
-        --no-conda -P trials=1000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2
+```shell
+make docker_run_experiments PARAMS="-P trials=1000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=4"
+```

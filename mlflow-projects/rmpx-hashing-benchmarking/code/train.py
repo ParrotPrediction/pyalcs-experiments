@@ -82,7 +82,7 @@ if __name__ == '__main__':
         rmpx_size=6,
         trials=100,
         agent='ACS2',
-        hash_name='sha256',
+        hash_name='md5',
         modulo=16)
 
     print(f"Len pop : {len(pop)}")

@@ -136,3 +136,5 @@ src
 .DS_Store
 **/*/.ipynb_checkpoints/
 average-reward-experiments/cache
+
+**/*/.env
