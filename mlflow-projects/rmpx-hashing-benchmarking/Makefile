@@ -7,4 +7,4 @@ docker_interactive:
 	docker run --entrypoint bash -ti $(image_name):latest
 
 docker_run_experiments:
-	docker run --rm --env-file .env --network host $(image_name):latest --no-conda $(PARAMS)
+	docker run -d --rm --env-file .env --network host $(image_name):latest --no-conda $(PARAMS)
