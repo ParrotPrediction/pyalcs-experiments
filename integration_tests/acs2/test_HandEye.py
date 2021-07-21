@@ -3,7 +3,7 @@ import gym
 import gym_handeye
 import pytest
 
-from examples.acs2.handeye.utils import handeye_metrics
+from examples.handeye.utils import handeye_metrics
 from lcs.agents.acs2 import Configuration, ACS2
 
 

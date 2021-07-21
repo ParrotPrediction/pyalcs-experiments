@@ -3,7 +3,7 @@ import gym
 import gym_maze
 import pytest
 
-from examples.acs2.maze.utils import maze_knowledge
+from examples.maze.utils import maze_knowledge
 from lcs.agents.acs2 import ACS2, Configuration
 from .utils import count_microclassifiers, \
     count_macroclassifiers, \
