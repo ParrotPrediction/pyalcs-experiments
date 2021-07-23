@@ -1,0 +1,158 @@
+chunk 0
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=4"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chunk 1
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs -P modulo=8"
+
+chunk 2
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2 -P modulo=16"
+
+chunk 3
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2 -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2ga -P modulo=16"
+
+chunk 4
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=yacs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=yacs -P modulo=32"
+
+chunk 5
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2ga -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2 -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2 -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2 -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs -P modulo=8"
+
+chunk 6
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs2ga -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=yacs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=md5 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=md5 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=16"
+
+chunk 7
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=md5 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs -P modulo=16"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=yacs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=md5 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=3 -P hash=sha256 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2ga -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs -P modulo=8"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=acs2ga -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=20 -P hash=sha256 -P agent=acs -P modulo=4"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=11 -P hash=sha256 -P agent=yacs -P modulo=32"
+	make docker_run_experiments PARAMS="-P trials=500000 -P rmpx-size=6 -P hash=sha256 -P agent=acs2 -P modulo=8"

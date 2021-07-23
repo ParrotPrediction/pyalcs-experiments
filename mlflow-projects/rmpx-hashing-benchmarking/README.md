@@ -52,5 +52,5 @@ make docker_build_image
     
 
 ```shell
-make docker_run_experiments PARAMS="-P trials=1000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=4"
+make run_docker PARAMS="-P trials=1000 -P rmpx-size=3 -P hash=md5 -P agent=acs2 -P modulo=4"
 ```

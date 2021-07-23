@@ -1,9 +1,11 @@
+from os import environ
 import mlflow
 import click
 
 from train import run
 
-mlflow.set_tracking_uri("http://localhost/mlflow")
+if "MLFLOW_TRACKING_URI" not in environ:
+    mlflow.set_tracking_uri("http://localhost/mlflow")
 
 
 @click.command()

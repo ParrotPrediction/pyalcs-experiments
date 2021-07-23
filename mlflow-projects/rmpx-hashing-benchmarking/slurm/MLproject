@@ -1,0 +1,18 @@
+name: RMPX Hash Benchmarking
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      rmpx-size: { type: int }
+      trials: { type: int }
+      modulo: { type: int }
+      hash: { type: string }
+      agent: { type: string }
+    command: "python ../code/mlflow_runner.py
+                        --rmpx-size {rmpx-size}
+                        --trials {trials}
+                        --modulo {modulo}
+                        --hash {hash}
+                        --agent {agent}"
