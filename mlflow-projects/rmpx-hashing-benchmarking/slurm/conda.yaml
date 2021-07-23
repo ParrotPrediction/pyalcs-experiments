@@ -11,5 +11,5 @@ dependencies:
     - "-e git+https://github.com/ParrotPrediction/openai-envs.git@1f9d0f6249a9ccddc3299309d72687fbcbb53fc6#egg=parrotprediction-openai-envs"
 
 variables:
-  AWS_ACCESS_KEY_ID: AKIA6FBBCFABMIODN7KX
-  AWS_SECRET_ACCESS_KEY: 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
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
