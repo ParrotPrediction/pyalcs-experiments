@@ -1,22 +1,20 @@
 name: rACS in Mountain Car
 
-conda_env: ../conda.yaml
+conda_env: conda.yaml
 
 entry_points:
   main:
     parameters:
       environment: {type: string, default: "MountainCar-v0"}
-      explore_trials: {type: int, default: 1000}
-      exploit_trials: {type: int, default: 10}
+      trials: {type: int, default: 1000}
       position_bins: {type: int, default: 10}
       velocity_bins: {type: int, default: 20}
       biased_exploration_prob: {type: float, default: 0.00}
       decay: {type: bool, default: false}
       gamma: {type: float, default: 0.95}
-    command: "python train.py
+    command: "python code/train.py
                                 --environment {environment}
-                                --explore-trials {explore_trials}
-                                --exploit-trials {exploit_trials}
+                                --trials {trials}
                                 --position-bins {position_bins}
                                 --velocity-bins {velocity_bins}
                                 --biased-exploration-prob {biased_exploration_prob}
