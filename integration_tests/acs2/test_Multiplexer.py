@@ -25,7 +25,8 @@ class TestMultiplexer:
 
     def test_should_be_no_duplicated_classifiers_without_ga(self, mp):
         # given
-        cfg = Configuration(mp.env.observation_space.n, 2,
+        cfg = Configuration(classifier_length=mp.env.observation_space.n,
+                            number_of_possible_actions=2,
                             environment_adapter=MultiplexerAdapter(),
                             do_ga=False)
         agent = ACS2(cfg)
@@ -38,7 +39,8 @@ class TestMultiplexer:
 
     def test_should_be_no_duplicated_classifiers_with_ga(self, mp):
         # given
-        cfg = Configuration(mp.env.observation_space.n, 2,
+        cfg = Configuration(classifier_length=mp.env.observation_space.n,
+                            number_of_possible_actions=2,
                             environment_adapter=MultiplexerAdapter(),
                             do_ga=True)
         agent = ACS2(cfg)
@@ -53,7 +55,8 @@ class TestMultiplexer:
 
     def test_should_evaluate_knowledge(self, mp):
         # given
-        cfg = Configuration(mp.env.observation_space.n, 2,
+        cfg = Configuration(classifier_length=mp.env.observation_space.n,
+                            number_of_possible_actions=2,
                             do_ga=False,
                             environment_adapter=MultiplexerAdapter())
         agent = ACS2(cfg)

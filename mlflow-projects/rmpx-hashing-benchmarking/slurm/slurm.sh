@@ -27,10 +27,9 @@
 ## Plik ze standardowym wyjściem błędów
 #SBATCH --error="error.err"
 
-module load plgrid/tools/python
-module load plgrid/tools/anaconda
+module load plgrid/tools/python-intel/3.5.3
 
 ## przejscie do katalogu z ktorego wywolany zostal sbatch
-cd $SLURM_SUBMIT_DIR
+cd $SLURM_SUBMIT_DIR/slurm
 
-./execute
+./execute.sh

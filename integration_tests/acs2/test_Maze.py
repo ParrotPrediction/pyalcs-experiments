@@ -3,7 +3,7 @@ import gym
 import gym_maze
 import pytest
 
-from examples.maze.utils import maze_knowledge
+from examples.maze import maze_knowledge
 from lcs.agents.acs2 import ACS2, Configuration
 from .utils import count_microclassifiers, \
     count_macroclassifiers, \
@@ -18,7 +18,8 @@ class TestMaze:
 
     def test_should_traverse(self, env):
         # given
-        cfg = Configuration(8, 8,
+        cfg = Configuration(classifier_length=8,
+                            number_of_possible_actions=8,
                             epsilon=1.0,
                             biased_exploration=0.5,
                             do_ga=False,
@@ -43,7 +44,8 @@ class TestMaze:
 
     def test_should_traverse_with_ga(self, env):
         # given
-        cfg = Configuration(8, 8,
+        cfg = Configuration(classifier_length=8,
+                            number_of_possible_actions=8,
                             epsilon=0.8,
                             biased_exploration=0.5,
                             mu=0.3,

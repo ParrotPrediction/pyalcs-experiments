@@ -13,6 +13,5 @@ run_mlflow:
 run_docker:
 	docker run -d --env-file .env --network="host" $(image_name):latest --no-conda $(PARAMS)
 
-slurm_zip:
-	zip slurm-delivery.zip code/* slurm/conda.yaml slurm/MLproject slurm/*.sh -x '*cache*'
-
+slurm_tar:
+	tar -czvf slurm-delivery.tar.gz --exclude=*cache* code/* slurm/conda.yaml slurm/MLproject slurm/*.sh

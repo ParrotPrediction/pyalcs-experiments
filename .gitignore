@@ -135,7 +135,7 @@ out
 src
 .DS_Store
 **/*/.ipynb_checkpoints/
-average-reward-experiments/cache
+notebooks/anticipatory-classifier-system-with-average-reward-criterion-in-discretized-multi-step-environments /cache
 
 **/*/.env
-**/*/slurm-delivery.zip
+**/*/slurm-delivery.*

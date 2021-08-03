@@ -13,5 +13,6 @@ dependencies:
   - pytest>=5.4
   - pip
   - dill
+  - tqdm
   - pip:
-    - gym==0.11
+    - gym>=0.18

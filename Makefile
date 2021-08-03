@@ -12,8 +12,5 @@ publish_experiments_docker_image:
 	docker tag $(experiments_image) khozzy/$(experiments_image)
 	docker push khozzy/$(experiments_image)
 
-execute_notebooks:
-#	papermill notebooks/rACS_Corridor.ipynb docs/source/notebooks/rACS_Corridor.ipynb
-	papermill notebooks/FrozenLake.ipynb docs/source/notebooks/FrozenLake.ipynb
-	papermill notebooks/Maze.ipynb docs/source/notebooks/Maze.ipynb
-	papermill notebooks/ACS2.ipynb docs/source/notebooks/ACS2.ipynb
+verify_publication_notebooks:
+	(cd notebooks/publications; python verify.py)
