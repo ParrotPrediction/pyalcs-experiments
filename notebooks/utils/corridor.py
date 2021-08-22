@@ -1,4 +1,3 @@
-import pandas as pd
 from matplotlib import pyplot as plt
 
 
@@ -17,8 +16,7 @@ def plot_performance(df, population):
     explore_exploit_trial = df.query('phase=="explore"').tail(1).index[0]
 
     # performance plots
-    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(14, 6),
-                                                 sharex=True, sharey=False)
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(14, 6), sharex=True, sharey=False)
     # fig.tight_layout()
 
     # Steps

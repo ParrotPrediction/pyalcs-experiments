@@ -1,0 +1,3 @@
+# Latent Learning for Anticipatory Classifier Systems in Discretized Real-Valued Environments
+
+> Real-valued environments are challenging for the learning systems by significantly increasing an input space size. This paper demonstrates that anticipatory learning classifier systems can successfully learn conditional rules without environmental reward. ACS, ACS2, YACS and Dyna-Q algorithm implementations were evaluated in four different testing problems by discretizing continuous environment signal. Obtained results are promising and can be used to optimize learning speed further by executing action planning or imaginary environmental interactions

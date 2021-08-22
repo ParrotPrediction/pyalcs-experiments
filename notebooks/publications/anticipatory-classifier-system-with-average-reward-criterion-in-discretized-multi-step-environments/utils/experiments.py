@@ -8,7 +8,6 @@ from metrics import parse_metrics
 from tqdm import tqdm
 
 
-
 def avg_experiments(n, fun):
     pops_acs2 = []
     pops_aacs2v1 = []
