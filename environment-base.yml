@@ -16,6 +16,6 @@ dependencies:
   - ipympl
   - tqdm
   - pip:
-    - gym>=0.18
-  imports:
-    - requirements/base.
+      - gym>=0.18
+  - imports:
+      - requirements/base.
