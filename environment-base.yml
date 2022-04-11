@@ -1,4 +1,4 @@
-name: pyalcs-experiments-pr
+name: pyalcs-experiments
 channels:
   - conda-forge
 dependencies:
