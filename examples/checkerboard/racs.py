@@ -31,8 +31,8 @@ if __name__ == '__main__':
 
     # Create agent
     encoder = RealValueEncoder(resolution_bits=4)
-    cfg = Configuration(chckb.observation_space.shape[0],
-                        chckb.action_space.n,
+    cfg = Configuration(classifier_length=chckb.observation_space.shape[0],
+                        number_of_possible_actions=chckb.action_space.n,
                         encoder=encoder,
                         user_metrics_collector_fcn=_checkerboard_metrics,
                         epsilon=0.5,
@@ -44,10 +44,10 @@ if __name__ == '__main__':
                         mu=0.15)
 
     agent = RACS(cfg)
-    population, metrics = agent.explore_exploit(chckb, 100)
+    metrics = agent.explore_exploit(chckb, 100)
 
     # print reliable classifiers
-    reliable = [cl for cl in population if cl.is_reliable()]
+    reliable = [cl for cl in agent.population if cl.is_reliable()]
     for cl in reliable:
         logging.info(cl)
 

@@ -2,7 +2,7 @@ name: pyalcs-experiments
 channels:
   - conda-forge
 dependencies:
-  - python=3.7
+  - python>=3.7
   - jupyter=1.0.0
   - jupyterlab>=3.2.0
   - jupyter_contrib_nbextensions>=0.5.1
@@ -15,7 +15,3 @@ dependencies:
   - dill
   - ipympl
   - tqdm
-  - pip:
-    - gym>=0.18
-  imports:
-    - requirements/base.
